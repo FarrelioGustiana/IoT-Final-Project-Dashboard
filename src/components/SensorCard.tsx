@@ -10,27 +10,6 @@ interface SensorCardProps {
 }
 
 const SensorCard = ({ value, status, title, icon, unit, max }: SensorCardProps) => {
-  const getStatusColor = () => {
-    switch (status) {
-      case "critical":
-        return "text-critical bg-critical/10"
-      case "warning":
-        return "text-warning bg-warning/10"
-      default:
-        return "text-success bg-success/10"
-    }
-  }
-
-  const getStatusText = () => {
-    switch (status) {
-      case "critical":
-        return "Critical"
-      case "warning":
-        return "Warning"
-      default:
-        return "Normal"
-    }
-  }
 
   const getProgressColor = () => {
     switch (status) {
@@ -54,7 +33,7 @@ const SensorCard = ({ value, status, title, icon, unit, max }: SensorCardProps) 
             <span className="text-muted">{icon}</span>
             <h2 className="text-sm font-medium text-foreground">{title}</h2>
           </div>
-          <span className={`text-xs px-2 py-0.5 rounded-full ${getStatusColor()}`}>{getStatusText()}</span>
+
         </div>
 
         <div className="flex items-end justify-between mb-4">
